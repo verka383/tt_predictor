@@ -2,8 +2,8 @@ from sklearn import tree
 
 # Define the dataset for training - each list is pair of player who played a match
 X = [
- [1,0,0,1.521,0,0,  1,2,1,1.564,0,0],   #Helisova-Dlask
- [0,0,1,1.395,0,0,  1,0,1,1.584,0,1],   #Patho-Skopkova
+ [1,0,0,1.521,0,0,  1,2,1,1.564,0,0],   #Helisova-Dlask 3:1
+ [0,0,1,1.395,0,0,  1,0,1,1.584,0,1],   #Patho-Skopkova 1:3
  [0,0,1,1.718,0,0,  1,1,1,1.773,0,0],   #Priklopil-Koci
  #[1,0,0,1.521,0,0,  1,0,1,1.644,0,0],   #Helisova-Gvichiani  - not included in the training data set - will be predicted
  [0,0,1,1.395,0,0,  1,2,1,1.564,0,0],   #Patho-Dlask

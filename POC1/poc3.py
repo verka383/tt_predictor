@@ -12,6 +12,8 @@ def runPOC(tr_input:str, tr_output:str, tst_input:str, tst_output:str):
                 output_list.append(line_splitted)
         return output_list
 
+#TODO reimplement readMoreLines so it uses readOneLine
+
     # function for loadig data from file to list
     # it expects that the file contains only one row of output labels separated by ','
     def readOneLine(fileName:str):
@@ -25,6 +27,8 @@ def runPOC(tr_input:str, tr_output:str, tst_input:str, tst_output:str):
 
     # load output data for training
     y = readOneLine(tr_output)
+
+    #TODO check if X and y have the same length
 
     ##################################################
     # Create the classifier and fit it to the data

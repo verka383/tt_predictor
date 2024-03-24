@@ -8,19 +8,24 @@ def readMoreLines(fileName:str):
         for line in inputFile:
             line_splitted = line.rstrip().split(',')
             output_list.append(line_splitted)
-    return output_list
+    return output_list   # [[1,2],[3],[2,2,9]]
+
+#TODO reimplement readMoreLines so it uses readOneLine
 
 def readOneLine(fileName:str):
     with open(fileName) as output_file:
         line = output_file.readline()
         output_list = line.rstrip().split(',')
-    return output_list
+    return output_list #[-1,-2,1]
 
 # load input data for training
 X = readMoreLines('./POC1/inputs_outputs/input1.txt')
 
 # load output data for training
 y = readOneLine('./POC1/inputs_outputs/output1.txt')
+
+
+#TODO check if X and y have the same length
 
 ##################################################
 # Create the classifier and fit it to the data
