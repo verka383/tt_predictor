@@ -1,0 +1,43 @@
+Data scaling
+=============
+>>> from sklearn.preprocessing import StandardScaler  
+>>> scaler = StandardScaler()  
+>>> # Don't cheat - fit only on training data
+>>> scaler.fit(X_train)  
+>>> X_train = scaler.transform(X_train)  
+>>> # apply same transformation to test data
+>>> X_test = scaler.transform(X_test)  
+
+
+split data set train and test
+==============================
+>>> X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=0)
+
+
+cross validation
+=================
+>>> from sklearn.model_selection import cross_val_score
+>>> clf = svm.SVC(kernel='linear', C=1, random_state=42)
+>>> scores = cross_val_score(clf, X, y, cv=5)
+>>> scores
+array([0.96..., 1. , 0.96..., 0.96..., 1. ])
+
+
+example usage with preprocessing
+=================================
+>>> from sklearn import preprocessing
+>>> X_train, X_test, y_train, y_test = train_test_split(
+...     X, y, test_size=0.4, random_state=0)
+>>> scaler = preprocessing.StandardScaler().fit(X_train)
+>>> X_train_transformed = scaler.transform(X_train)
+>>> clf = svm.SVC(C=1).fit(X_train_transformed, y_train)
+>>> X_test_transformed = scaler.transform(X_test)
+>>> clf.score(X_test_transformed, y_test)
+0.9333...
+
+
+how to understand our problem
+==============================
+1) decision tree
+2) classifier with 6 categories
+3) 
